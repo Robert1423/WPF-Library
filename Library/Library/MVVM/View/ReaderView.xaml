@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Library.MVVM.View.ReaderView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Library.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="700">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Theme/ControlButton.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Label Content="Czytelnicy" FontSize="30"
+               Margin="10,0,0,0" FontWeight="Bold"
+               Foreground="WhiteSmoke"/>
+        <DataGrid Name="readers" Grid.Row="1" 
+                  Margin="10,0,20,0" FontSize="15"
+                  ItemsSource="{Binding Path=readerBase.readers}"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  GridLinesVisibility="Vertical"
+                  SelectedIndex="{Binding Path=SelectedReader}"
+                  HorizontalContentAlignment="Center"
+                  RowBackground="Transparent">
+            <DataGrid.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#E4E4E4" Offset="0.0"/>
+                    <GradientStop Color="#DEDEDE" Offset="1"/>
+                </LinearGradientBrush>
+            </DataGrid.Background>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" MinWidth="150"
+                    Binding="{Binding Path=_id}"/>
+                <DataGridTextColumn Header="Imię Nazwisko" MinWidth="250"
+                    Binding="{Binding Path=_name}"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Button Name="DeleteReader" Content="Usuń" Width="75"
+                Height="30" FontSize="15"
+                Grid.Row="2" HorizontalAlignment="Right"
+                Margin="0,0,20,0" Click="DeleteReader_Click"
+                Style="{StaticResource ControlButton}"/>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,31 @@
+﻿<Application x:Class="Library.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Library"
+             xmlns:viewModel="clr-namespace:Library.MVVM.ViewModel"
+             xmlns:view="clr-namespace:Library.MVVM.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type viewModel:TitleViewModel}">
+            <view:TitleView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:ReaderViewModel}">
+            <view:ReaderView/>
+        </DataTemplate>        
+        <DataTemplate DataType="{x:Type viewModel:RentsViewModel}">
+            <view:RentsView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:ReaderAddViewModel}">
+            <view:ReaderAdd/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:TitleAddViewModel}">
+            <view:TitleAddView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:RentAddViewModel}">
+            <view:RentTitleView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:FinishRentViewModel}">
+            <view:FinishRentView/>
+        </DataTemplate>
+    </Application.Resources>
+</Application>

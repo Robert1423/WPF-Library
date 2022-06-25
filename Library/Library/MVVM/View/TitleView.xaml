@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="Library.MVVM.View.TitleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Library.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="700">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Theme/ControlButton.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Label Content="Zasoby" FontSize="30"
+                   Margin="10,0,0,0" FontWeight="Bold"
+               Foreground="WhiteSmoke"/>
+        <DataGrid Name="ResourcesData" Grid.Row="1" 
+                  Margin="10,0,20,0"
+                  FontSize="15"
+                  ItemsSource="{Binding Path=titleBase.titles}"
+                  AutoGenerateColumns="False"
+                  GridLinesVisibility="Vertical"
+                  CanUserAddRows="False"
+                  IsReadOnly="True"
+                  SelectedIndex="{Binding Path=SelectedTitle}"
+                  RowBackground="Transparent">
+            <DataGrid.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#E4E4E4" Offset="0.0"/>
+                    <GradientStop Color="#DEDEDE" Offset="1"/>
+                </LinearGradientBrush>
+            </DataGrid.Background>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" 
+                                    Binding="{Binding Path=_id}"
+                                    MinWidth="90"/>
+                <DataGridTextColumn Header="Autor" 
+                                    Binding="{Binding Path=_author}"
+                                    MinWidth="150"/>
+                <DataGridTextColumn Header="Tytuł" 
+                                    Binding="{Binding Path=_title}"
+                                    MinWidth="150"/>
+                <DataGridTextColumn Header="Typ" 
+                                    Binding="{Binding Path=_type}"
+                                    MinWidth="100"/>
+                <DataGridTextColumn Header="Data wydania" 
+                                    Binding="{Binding Path=_publishDateString}"
+                                    MinWidth="100"/>
+                <DataGridTextColumn Header="Ilość" 
+                                    Binding="{Binding Path=_quantity}"
+                                    MinWidth="50"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" 
+                    Margin="0,0,20,0">
+            <TextBlock Text="Pokaż" FontSize="15"
+                       Margin="10,0,0,0" Width="50"
+                       VerticalAlignment="Center"
+                       Foreground="WhiteSmoke"/>
+            <ComboBox Name="TypeBox"
+                      IsEditable="False"
+                      IsReadOnly="True"
+                      Width="200" Height="30" 
+                      Margin="10,0,10,0" FontSize="15"
+                      SelectedIndex="4">
+                <ComboBoxItem Content="Książki" FontSize="15"/>
+                <ComboBoxItem Content="Filmy" FontSize="15"/>
+                <ComboBoxItem Content="Czasopisma" FontSize="15"/>
+                <ComboBoxItem Content="Prace naukowe" FontSize="15"/>
+                <ComboBoxItem Content="Wszystko" FontSize="15"/>
+            </ComboBox>
+            <Button Name="Filtr" Content="Filtruj" Width="75"
+                    Height="30" FontSize="15"
+                    Click="Filtr_Click"
+                    Style="{StaticResource ControlButton}"/> 
+            <Button Name="RemoveTitle" Content="Usuń" Width="75"
+                    Height="30" FontSize="15"
+                    Margin="246,0,20,0"
+                    Click="RemoveTitle_Click"
+                    Style="{StaticResource ControlButton}"/>
+        </StackPanel>
+        
+    </Grid>
+</UserControl>

@@ -1,0 +1,304 @@
+{
+  "$type": "Library.Database, Library",
+  "SelectedReader": -1,
+  "SelectedTitle": -1,
+  "SelectedRent": -1,
+  "titleBase": {
+    "$type": "Library.Core.TitleBase, Library",
+    "titles": {
+      "$type": "System.Collections.ObjectModel.ObservableCollection`1[[Library.Title, Library]], System",
+      "$values": [
+        {
+          "$type": "Library.Book, Library",
+          "_title": "s",
+          "_author": "s",
+          "_id": "B001",
+          "_quantity": 1,
+          "_type": 0,
+          "_publishDateString": "2022"
+        },
+        {
+          "$type": "Library.Movie, Library",
+          "_title": "r",
+          "_author": "r",
+          "_id": "F002",
+          "_quantity": 0,
+          "_type": 1,
+          "_publishDateString": "2022"
+        },
+        {
+          "$type": "Library.Magazine, Library",
+          "_title": "sw",
+          "_author": "",
+          "_id": "M003",
+          "_quantity": 1,
+          "_type": 2,
+          "_publishDateString": "07.04.2022"
+        },
+        {
+          "$type": "Library.Thesis, Library",
+          "_title": "t",
+          "_author": "te",
+          "_id": "T004",
+          "_quantity": 4,
+          "_type": 3,
+          "_publishDateString": "15.04.2022"
+        },
+        {
+          "$type": "Library.Book, Library",
+          "_title": "r",
+          "_author": "t",
+          "_id": "B005",
+          "_quantity": 3,
+          "_type": 0,
+          "_publishDateString": "2022"
+        },
+        {
+          "$type": "Library.Movie, Library",
+          "_title": "r",
+          "_author": "we",
+          "_id": "F006",
+          "_quantity": 3,
+          "_type": 1,
+          "_publishDateString": "2022"
+        },
+        {
+          "$type": "Library.Thesis, Library",
+          "_title": "r",
+          "_author": "y",
+          "_id": "T007",
+          "_quantity": 4,
+          "_type": 3,
+          "_publishDateString": "28.04.2022"
+        },
+        {
+          "$type": "Library.Magazine, Library",
+          "_title": "rt",
+          "_author": "",
+          "_id": "M008",
+          "_quantity": 4,
+          "_type": 2,
+          "_publishDateString": "31.03.2022"
+        }
+      ]
+    },
+    "filter": {
+      "$type": "System.Collections.ObjectModel.ObservableCollection`1[[Library.Title, Library]], System",
+      "$values": [
+        {
+          "$type": "Library.Thesis, Library",
+          "_title": "t",
+          "_author": "te",
+          "_id": "T004",
+          "_quantity": 4,
+          "_type": 3,
+          "_publishDateString": "15.04.2022"
+        },
+        {
+          "$type": "Library.Thesis, Library",
+          "_title": "r",
+          "_author": "y",
+          "_id": "T007",
+          "_quantity": 4,
+          "_type": 3,
+          "_publishDateString": "28.04.2022"
+        }
+      ]
+    }
+  },
+  "rentBase": {
+    "$type": "Library.RentBase, Library",
+    "rents": {
+      "$type": "System.Collections.ObjectModel.ObservableCollection`1[[Library.Rent, Library]], System",
+      "$values": [
+        {
+          "$type": "Library.Rent, Library",
+          "_rented": {
+            "$type": "Library.Movie, Library",
+            "_title": "r",
+            "_author": "r",
+            "_id": "F002",
+            "_quantity": 0,
+            "_type": 1,
+            "_publishDateString": "2022"
+          },
+          "_rentedBy": {
+            "$type": "Library.Reader, Library",
+            "_name": "qe",
+            "_id": "R002",
+            "_rented": null,
+            "_dueSum": 0.0,
+            "_duePaid": 0.0
+          },
+          "Date": "23.05.2022",
+          "ExpDate": "06.06.2022",
+          "RentTitle": "F002",
+          "RentName": "R002"
+        },
+        {
+          "$type": "Library.Rent, Library",
+          "_rented": {
+            "$type": "Library.Movie, Library",
+            "_title": "r",
+            "_author": "r",
+            "_id": "F002",
+            "_quantity": 0,
+            "_type": 1,
+            "_publishDateString": "2022"
+          },
+          "_rentedBy": {
+            "$type": "Library.Reader, Library",
+            "_name": "e",
+            "_id": "R001",
+            "_rented": null,
+            "_dueSum": 0.0,
+            "_duePaid": 0.0
+          },
+          "Date": "23.05.2022",
+          "ExpDate": "06.06.2022",
+          "RentTitle": "F002",
+          "RentName": "R001"
+        },
+        {
+          "$type": "Library.Rent, Library",
+          "_rented": {
+            "$type": "Library.Book, Library",
+            "_title": "r",
+            "_author": "t",
+            "_id": "B005",
+            "_quantity": 4,
+            "_type": 0,
+            "_publishDateString": "2022"
+          },
+          "_rentedBy": {
+            "$type": "Library.Reader, Library",
+            "_name": "qe",
+            "_id": "R002",
+            "_rented": null,
+            "_dueSum": 0.0,
+            "_duePaid": 0.0
+          },
+          "Date": "29.05.2022",
+          "ExpDate": "12.06.2022",
+          "RentTitle": "B005",
+          "RentName": "R002"
+        }
+      ]
+    }
+  },
+  "readerBase": {
+    "$type": "Library.ReaderBase, Library",
+    "readers": {
+      "$type": "System.Collections.ObjectModel.ObservableCollection`1[[Library.Reader, Library]], System",
+      "$values": [
+        {
+          "$type": "Library.Reader, Library",
+          "_name": "e",
+          "_id": "R001",
+          "_rented": {
+            "$type": "System.Collections.ObjectModel.ObservableCollection`1[[Library.Rent, Library]], System",
+            "$values": [
+              {
+                "$type": "Library.Rent, Library",
+                "_rented": {
+                  "$type": "Library.Movie, Library",
+                  "_title": "r",
+                  "_author": "r",
+                  "_id": "F002",
+                  "_quantity": 0,
+                  "_type": 1,
+                  "_publishDateString": "2022"
+                },
+                "_rentedBy": {
+                  "$type": "Library.Reader, Library",
+                  "_name": "e",
+                  "_id": "R001",
+                  "_rented": null,
+                  "_dueSum": 0.0,
+                  "_duePaid": 0.0
+                },
+                "Date": "23.05.2022",
+                "ExpDate": "06.06.2022",
+                "RentTitle": "F002",
+                "RentName": "R001"
+              }
+            ]
+          },
+          "_dueSum": 0.0,
+          "_duePaid": 0.0
+        },
+        {
+          "$type": "Library.Reader, Library",
+          "_name": "qe",
+          "_id": "R002",
+          "_rented": {
+            "$type": "System.Collections.ObjectModel.ObservableCollection`1[[Library.Rent, Library]], System",
+            "$values": [
+              {
+                "$type": "Library.Rent, Library",
+                "_rented": {
+                  "$type": "Library.Movie, Library",
+                  "_title": "r",
+                  "_author": "r",
+                  "_id": "F002",
+                  "_quantity": 0,
+                  "_type": 1,
+                  "_publishDateString": "2022"
+                },
+                "_rentedBy": {
+                  "$type": "Library.Reader, Library",
+                  "_name": "qe",
+                  "_id": "R002",
+                  "_rented": null,
+                  "_dueSum": 0.0,
+                  "_duePaid": 0.0
+                },
+                "Date": "23.05.2022",
+                "ExpDate": "06.06.2022",
+                "RentTitle": "F002",
+                "RentName": "R002"
+              },
+              {
+                "$type": "Library.Rent, Library",
+                "_rented": {
+                  "$type": "Library.Book, Library",
+                  "_title": "r",
+                  "_author": "t",
+                  "_id": "B005",
+                  "_quantity": 4,
+                  "_type": 0,
+                  "_publishDateString": "2022"
+                },
+                "_rentedBy": {
+                  "$type": "Library.Reader, Library",
+                  "_name": "qe",
+                  "_id": "R002",
+                  "_rented": null,
+                  "_dueSum": 0.0,
+                  "_duePaid": 0.0
+                },
+                "Date": "29.05.2022",
+                "ExpDate": "12.06.2022",
+                "RentTitle": "B005",
+                "RentName": "R002"
+              }
+            ]
+          },
+          "_dueSum": 0.0,
+          "_duePaid": 0.0
+        },
+        {
+          "$type": "Library.Reader, Library",
+          "_name": "rq",
+          "_id": "R003",
+          "_rented": {
+            "$type": "System.Collections.ObjectModel.ObservableCollection`1[[Library.Rent, Library]], System",
+            "$values": []
+          },
+          "_dueSum": 0.0,
+          "_duePaid": 0.0
+        }
+      ]
+    }
+  }
+}
